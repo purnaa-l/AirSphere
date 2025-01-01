@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./HistoricalData.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const HistoricalData = () => {
   const [city, setCity] = useState("");
@@ -14,27 +16,30 @@ const HistoricalData = () => {
     const params = new URLSearchParams(window.location.search);
     const cityName = params.get("city");
     setCity(cityName);
-  
-    console.log(cityName);  // Add this to check if cityName is set
-  
+
     if (cityName) {
       fetchHistoricalData(cityName);
     }
   }, []);
-  
 
   const fetchHistoricalData = async (cityName) => {
     try {
-      // Pass city parameter to backend API to fetch data
       const response = await axios.get(`http://localhost:8080/api/historical-data/city?city=${cityName}`);
       const cityData = response.data;
 
-      // Filter out blank entries (if any) and only keep non-empty records
+      // Filter out blank entries and only keep non-empty records
       const validData = cityData.filter(record => record.date && record.aqi !== null);
       setData(validData);
       setFilteredData(validData);
+
+      // Toast success message
+      toast.success("Historical data fetched successfully!");
+
     } catch (error) {
       console.error("Error fetching historical data:", error);
+      
+      // Toast error message
+      toast.error("Failed to fetch historical data!");
     }
   };
 
@@ -137,6 +142,9 @@ const HistoricalData = () => {
         <button className="fancy-button" onClick={viewAnalytics}>View Analytics</button>
         <button className="fancy-button" onClick={downloadPDF}>Download PDF</button>
       </div>
+
+      {/* Toast Container */}
+      <ToastContainer />
     </div>
   );
 };
