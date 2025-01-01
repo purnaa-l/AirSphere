@@ -6,6 +6,7 @@ import jsPDF from "jspdf";
 import { ToastContainer, toast } from 'react-toastify'; // Import Toastify
 import 'react-toastify/dist/ReactToastify.css'; // Import CSS for styling
 
+
 const HistoricalData = () => {
   const pdfRef = useRef();
   const [city, setCity] = useState("");
@@ -36,10 +37,18 @@ const HistoricalData = () => {
       const validData = cityData.filter(
         (record) => record.date && record.aqi !== null
       );
+
       setData(validData);
       setFilteredData(validData);
+
+      // Toast success message
+      toast.success("Historical data fetched successfully!");
+
     } catch (error) {
       console.error("Error fetching historical data:", error);
+      
+      // Toast error message
+      toast.error("Failed to fetch historical data!");
     }
   };
 
