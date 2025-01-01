@@ -41,6 +41,9 @@ function Navbar({ theme, toggleTheme }) {
             <li className="nav-item">
               <Link to="/view-past-aqis" className="nav-link" style={{ color: '#fff' }}>View Past AQIs</Link>
             </li>
+            <li className="nav-item">
+              <Link to="/contact-form" className="nav-link" style={{ color: '#fff' }}>Contact Us</Link>
+            </li>
           </ul>
           {/* Theme Toggle Button */}
           <button 

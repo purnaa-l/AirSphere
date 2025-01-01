@@ -1,6 +1,6 @@
 /* General page styles */
 body {
-    background-color: #E9EED9;
+    background-color: #E9EED9; /* Set background color to subtle green */
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #493628;
     margin: 0;
@@ -12,6 +12,10 @@ body {
 .available-cities {
     margin: 30px auto;
     text-align: center;
+    background-color: #E9EED9; /* Ensure the section background matches the page */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .available-cities h2 {
@@ -28,7 +32,7 @@ body {
 }
 
 .city-card {
-    background-color: #CBD2A4;
+    background-color: #CBD2A4; /* Light green for the card */
     padding: 20px;
     width: 200px;
     text-align: center;
@@ -77,6 +81,9 @@ body {
 .filters {
     margin: 30px auto;
     text-align: center;
+    background-color: #E9EED9; /* Matching section background color */
+    padding: 20px;
+    border-radius: 8px;
 }
 
 .filters label {
@@ -133,4 +140,9 @@ body {
 
 .aqi-table tbody tr:hover {
     background-color: #F1F1F1;
+}
+
+/* Additional refinements for sections that might overlap */
+section {
+    background-color: #E9EED9; /* Ensures that the background color is consistent */
 }
