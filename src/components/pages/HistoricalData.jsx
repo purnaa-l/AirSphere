@@ -134,7 +134,7 @@ const HistoricalData = () => {
             generatePDFPage(page + 1);
           } else {
             // Create a dynamic file name based on the city and page number
-            const fileName = `historical_data_${city}_${page}.pdf`;
+            const fileName = `historical_data_${city}.pdf`;
             doc.save(fileName);
 
             // Success Toast
