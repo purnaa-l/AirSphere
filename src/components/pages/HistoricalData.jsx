@@ -138,7 +138,7 @@ const HistoricalData = () => {
             doc.save(fileName);
 
             // Success Toast
-            toast.success(`PDF downloaded successfully for ${city}`);
+            toast.success(`PDF downloaded successfully for ${city} !`);
           }
           
           // Remove the temporary page element from the DOM after rendering
