@@ -14,6 +14,7 @@ import Footer from './components/Footer';
 import HistoricalData from './components/pages/HistoricalData';
 import AdminHero from './adminComponents/AdminHeroPage';
 import ViewEngagement from './adminComponents/ViewEngagement';
+import AddCities from './adminComponents/AddCities';
 const App = () => {
   const [loading, setLoading] = useState(true);
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
@@ -50,6 +51,7 @@ const App = () => {
         <Route path="/historical-data" element={<HistoricalData />} />
         <Route path='/admin' element={<AdminHero />} />
         <Route path='/view-engagement' element={<ViewEngagement />} />
+        <Route path='/add-cities' element={<AddCities />} />
       </Routes>
     </BrowserRouter>
     
