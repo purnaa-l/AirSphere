@@ -29,7 +29,7 @@ const cityData = [
   { name: "Rajkot", description: "A prominent city in Gujarat, known for its textile industry and the birthplace of Mahatma Gandhi's childhood."},
   { name: "Bhavnagar", description: "Known for its historical sites, beaches, and the famous Takhteshwar Temple."},
   { name: "Surat", description: "Famous for its diamond cutting and polishing industry, as well as textile manufacturing."},
-  { name: "Ahmedabad", description: "A historic city known for its textiles, Gandhi Ashram, and the Sabarmati Riverfront."}
+  { name: "Ahmedabad", description: "A historic city known for its textiles, Gandhi Ashram, and the Sabarmati riverfront."}
 ];
 
 const CityCards = () => {
