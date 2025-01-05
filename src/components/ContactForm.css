@@ -14,6 +14,8 @@
   object-fit: cover;
   .unique-contact-form-wrapper {
   margin: 0;
+  background: url('images/clouds.png') repeat-x; 
+
   box-sizing: border-box;
   background: rgba(0, 0, 0, 0.6); /* Optional: Add a semi-transparent background */
   border-radius: 10px;
@@ -28,7 +30,7 @@
   left: 0;
   width: 200%;
   height: 500%;
-  background: url('images/clouds.png') repeat-x; 
+  background: url('images/clouds-3.png') repeat-x; 
   background-position: center; /* Center the image */
   height: 100vh; /* Set height to 100% of the viewport height */
   width: 100%; 

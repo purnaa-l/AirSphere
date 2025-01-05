@@ -16,6 +16,7 @@ import AdminHero from './adminComponents/AdminHeroPage';
 import ViewEngagement from './adminComponents/ViewEngagement';
 import AddCities from './adminComponents/AddCities';
 import ViewCities from './adminComponents/ViewCities';
+import AddData from './adminComponents/AddData';
 const App = () => {
   const [loading, setLoading] = useState(true);
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
@@ -54,7 +55,7 @@ const App = () => {
         <Route path='/view-engagement' element={<ViewEngagement />} />
         <Route path='/add-cities' element={<AddCities />} />
         <Route path="/view-existing-cities" element={<ViewCities />} /> {/* New Route */}
-
+        <Route path='/add-data' element={<AddData />} />
       </Routes>
     </BrowserRouter>
     
