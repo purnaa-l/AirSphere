@@ -1,0 +1,45 @@
+.typing-effect {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #333;
+    overflow: hidden; /* Ensures the typing effect is clipped */
+    white-space: nowrap;
+    border-right: 3px solid #333;
+    width: 0;
+    animation: typing 3s steps(30) 1s forwards, blink 0.75s step-end infinite;
+  }
+  
+  @keyframes typing {
+    to {
+      width: 100%;
+    }
+  }
+  
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+  
+  .chart-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .download-pdf-btn {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .download-pdf-btn:hover {
+    background-color: #2980b9;
+  }
+  
