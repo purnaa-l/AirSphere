@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"; // Import toast styles
-import './AddCities.css';
-import { postCity } from "../services/AqiService";
-import Footer from "../components/Footer";
+import './AddCities.css'; // Import CSS for AddCities
+import { postCity, checkCityExists } from "../services/AqiService";
 import { useNavigate } from 'react-router-dom';  // Import useNavigate
+import ViewCities from "./ViewCities";
 
 const AddCities = () => {
   const [formData, setFormData] = useState({
     city: "",
     description: "",
-    author: "" // Changed to 'author' to match input name
+    author: ""
   });
 
   const [errors, setErrors] = useState({
@@ -52,49 +52,36 @@ const AddCities = () => {
     return isValid;
   };
 
-  const handleSubmit = async (e) =>  {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-  
-    // Create the created_at value dynamically with current timestamp in the format 'YYYY-MM-DD HH:mm:ss.ssssss'
+
     const currentDate = new Date();
-    const formattedDate = currentDate.toISOString(); // This will give us a format like '2025-01-04T00:27:14.078Z'
-    const formattedTimestamp = formattedDate.split('T').join(' ').split('Z')[0]; // Convert to '2025-01-04 00:27:14.078'
-  
-    // Log for debugging
-    console.log("Formatted Timestamp: ", formattedTimestamp);
-  
-    // Add the formatted timestamp to formData
+    const formattedDate = currentDate.toISOString(); 
+    const formattedTimestamp = formattedDate.split('T').join(' ').split('Z')[0]; 
+
     const updatedFormData = { 
       ...formData, 
-      created_at: formattedTimestamp // Timestamp in the correct format
+      created_at: formattedTimestamp 
     };
-  
-    console.log("Form Data being submitted: ", updatedFormData); // Log the updated form data
-  
+
     if (validateForm()) {
       try {
+        const cityExists = await checkCityExists(formData.city);
+        if (cityExists) {
+          toast.error("City already exists.");
+          return;
+        }
+
         const formResponse = await postCity(updatedFormData);
-        console.log("Form submission response: ", formResponse);
-        toast.success("Form submitted successfully!"); // Success toast
-        setFormData({ city: "", description: "", created_by: "" });
-  
-        // Navigate to a new route after submission (optional)
-        navigate('/some-path'); // Adjust the path based on your routing structure
+        toast.success("Form submitted successfully!"); 
+        setFormData({ city: "", description: "", author: "" });
       } catch (error) {
-        console.log("Error submitting data", error);
         toast.error("Something went wrong. Try again.");
-        setFormData({ city: "", description: "", created_by: "" });
+        setFormData({ city: "", description: "", author: "" });
       }
     } else {
       toast.error("Please correct the errors in the form.");
     }
-  };
-  
-  
-  
-
-  const handleViewCities = () => {
-    navigate('/view-cities');  // Navigate to the route where cities are listed
   };
 
   return (
@@ -140,15 +127,16 @@ const AddCities = () => {
           />
           {errors.author && <p className="unique-error-text">{errors.author}</p>}
         </div>
-        
+
         <div className="unique-buttons-container">
           <button type="submit" className="unique-submit-btn">
-            Submit
+            Add City
           </button>
-          
           <button 
-            onClick={handleViewCities} 
+            type="button"
+            onClick={() => navigate('/view-existing-cities')} // Navigate to the new route
             className="unique-submit-btn"
+            style={{ marginLeft: '10px' }}
           >
             View Existing Cities
           </button>

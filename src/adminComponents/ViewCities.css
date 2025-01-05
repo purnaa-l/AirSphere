@@ -8,33 +8,10 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     overflow: hidden;
     object-fit: cover;
-    .unique-contact-form-wrapper {
-    margin: 0;
-    box-sizing: border-box;
     background: rgba(0, 0, 0, 0.6); /* Optional: Add a semi-transparent background */
-    border-radius: 10px;
-  }
-  
-  .unique-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    font-size: 1.2rem;
-    text-align: left;
-  }
-  
-  .unique-table th, .unique-table td {
-    padding: 12px;
-    border: 1px solid #ddd;
-  }
-  
-  .unique-table th {
-    background-color: #f4f4f4;
-  }
-  
-  }
-  
-  .clouds {
+}
+
+.clouds {
     position: absolute;
     top: 0;
     left: 0;
@@ -44,46 +21,47 @@
     background-position: center; /* Center the image */
     height: 100vh; /* Set height to 100% of the viewport height */
     width: 100%; 
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
     animation: moveClouds 60s linear infinite;
     z-index: -1;
     opacity: 0.7;
-  }
-  
-  @keyframes moveClouds {
+}
+
+@keyframes moveClouds {
     from {
         background-position: 0 0;
     }
     to {
         background-position: 100% 0;
     }
-  }
-  .unique-contact-form-title {
+}
+
+.unique-contact-form-title {
     margin-bottom: 20px;
     font-size: 2.5rem;
     color: #ffd700;
-  }
-  
-  .unique-contact-form-content {
+}
+
+.unique-contact-form-content {
     max-width: 600px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 15px;
     font-size: 1.1rem;
-  }
-  
-  .unique-form-group-container {
+}
+
+.unique-form-group-container {
     display: flex;
     flex-direction: column;
     gap: 5px;
     text-align: left;
-  }
-  
-  .unique-input-field {
+}
+
+.unique-input-field {
     padding: 12px;
     font-size: 1rem;
     border: 2px solid #fff;
@@ -91,23 +69,23 @@
     background: transparent;
     color: white;
     outline: none;
-  }
-  
-  textarea.unique-input-field {
+}
+
+textarea.unique-input-field {
     min-height: 100px;
-  }
-  
-  .unique-input-field.unique-error {
+}
+
+.unique-input-field.unique-error {
     border-color: #ff0000;
-  }
-  
-  .unique-error-text {
+}
+
+.unique-error-text {
     font-size: 0.9rem;
     color: #ff0000;
     text-align: left;
-  }
-  
-  .unique-submit-btn {
+}
+
+.unique-submit-btn {
     padding: 12px;
     background-color: #ffd700;
     color: #182848;
@@ -116,30 +94,47 @@
     cursor: pointer;
     font-size: 1.1rem;
     transition: background-color 0.3s ease;
-  }
-  
-  .unique-submit-btn:hover {
+}
+
+.unique-submit-btn:hover {
     background-color: #ffcc00;
-  }
-  .button-group {
+}
+
+.unique-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.unique-table th,
+.unique-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.unique-table th {
+    background-color: #f4f4f4;
+    color: black;
+    font-weight: bold;
+}
+
+.unique-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.unique-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.unique-buttons-container {
     display: flex;
     justify-content: space-between;
     gap: 10px;
-  }
+}
 
-  
-  
-  .unique-view-btn {
-    padding: 0.5rem 1rem;
-    background-color: #B4C56A;
-    color: white;
-    border: none;
-    border-radius: 0.375rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .unique-view-btn:hover {
-    background-color: #8EA15B;
-  }
-  
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}

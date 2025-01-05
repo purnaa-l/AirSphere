@@ -44,4 +44,14 @@ export const getCities = async () => {
       throw error; // Re-throw error for handling in the component
     }
   };
+
+export const checkCityExists = async (cityName) => {
+    try {
+      const response = await axios.get(`${REST_API_ADD_CITY_URL}?cityName=${encodeURIComponent(cityName)}`);
+      return response.data.exists; // Adjust based on your API's response format
+    } catch (error) {
+      console.error("Error checking if city exists:", error);
+      throw error;
+    }
+  };
   
