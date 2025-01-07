@@ -19,6 +19,7 @@ import ViewCities from './adminComponents/ViewCities';
 import AddData from './adminComponents/AddData';
 import Analytics from './components/pages/Analytics';
 import Dashboard from './adminComponents/Dashboard';
+import ResolveQueries from './adminComponents/ResolveQueries';
 const App = () => {
   const [loading, setLoading] = useState(true);
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
@@ -60,7 +61,7 @@ const App = () => {
         <Route path='/add-data' element={<AddData />} />
         <Route path="/analytics/:city" element={<Analytics />} />
         <Route path="/admin/dashboard" element={<Dashboard />} />
-
+        <Route path='/resolve-queries' element={<ResolveQueries />} />
       </Routes>
     </BrowserRouter>
     
