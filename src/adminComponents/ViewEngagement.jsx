@@ -85,7 +85,7 @@ function ViewEngagement() {
         <ul className="icon-list">
           <li className="icon-item" onClick={() => navigate("/admin")}>🏠</li>
           <li className="icon-item">⚙️</li>
-          <li className="icon-item">➕</li>
+          <li className="icon-item" onClick={()=>navigate("/add-data")}>➕</li>
           <li className="icon-item" onClick={handleDownloadPDF}>📄</li>
         </ul>
       </div>

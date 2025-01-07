@@ -43,7 +43,7 @@ function AdminHeroPage() {
       <div className="button-group">
            <Link to="/add-data" className="cta-button">Add Data</Link>
            <Link to="/view-engagement" className="cta-button">View User Engagement</Link>
-           <Link to="/view-aqi-admin" className="cta-button">View AQI Data</Link>
+           <Link to="/admin/dashboard" className="cta-button">View AQI Data</Link>
            <Link to="/resolve-queries" className="cta-button">Resolve Queries</Link>
       </div>
     </div>

@@ -54,4 +54,41 @@ export const checkCityExists = async (cityName) => {
       throw error;
     }
   };
-  
+
+const API_URL = 'http://localhost:8080/api/sql/aqi';
+
+export const getAvgAqiByCity = async () => {
+    try {
+        const response = await axios.get(`${API_URL}/avg-aqi`);
+        return response.data;
+    } catch (error) {
+        console.error('Error fetching average AQI data', error);
+    }
+};
+
+export const getRecordCountByCity = async () => {
+    try {
+        const response = await axios.get(`${API_URL}/record-count`);
+        return response.data;
+    } catch (error) {
+        console.error('Error fetching record count data', error);
+    }
+};
+
+export const getMaxAqiByCity = async () => {
+    try {
+        const response = await axios.get(`${API_URL}/max-aqi`);
+        return response.data;
+    } catch (error) {
+        console.error('Error fetching max AQI data', error);
+    }
+};
+
+export const getMinAqiByCity = async () => {
+    try {
+        const response = await axios.get(`${API_URL}/min-aqi`);
+        return response.data;
+    } catch (error) {
+        console.error('Error fetching min AQI data', error);
+    }
+};
