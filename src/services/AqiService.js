@@ -45,6 +45,8 @@ export const getCities = async () => {
     }
   };
 
+export const postHistoricalData=(aqi)=>axios.post(REST_API_HISTORICAL_URL, aqi);
+
 export const checkCityExists = async (cityName) => {
     try {
       const response = await axios.get(`${REST_API_ADD_CITY_URL}?cityName=${encodeURIComponent(cityName)}`);
