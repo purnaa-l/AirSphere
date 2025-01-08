@@ -17,7 +17,7 @@ const navigate = useNavigate();  // Initialize the navigate function
       <div className="button-group">
         <button className="action-btn" onClick={() => navigate('/add-cities')}>Add City</button>
         <button className="action-btn" onClick={() => navigate('/view-existing-cities')}>View Existing Cities</button>
-        <button className="action-btn" onClick={handleHistoricalData}>Add Historical AQI</button>
+        <button className="action-btn" onClick={() => navigate('/upload-historical-data')}>Add Historical AQI</button>
       </div>
     </div>
   );
