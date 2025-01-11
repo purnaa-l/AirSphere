@@ -18,9 +18,11 @@ video {
 
 .hero-heading {
   color: #fff;
-  font-size: 100px;
-  margin-top: -100px;
   animation: fadeIn 2s ease-in-out forwards;
+  font-size: 3rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
 }
 
 .loading-text-hero {

@@ -101,10 +101,14 @@ textarea.unique-input-field {
     background-color: #ffcc00;
 }
 
-.unique-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
+.unique-table tr {
+    background-color: #ffffff; /* Set all rows to white */
+}
+
+.unique-table th {
+    background-color: #f4f4f4;
+    color: black;
+    font-weight: bold;
 }
 
 .unique-table th,
@@ -114,19 +118,10 @@ textarea.unique-input-field {
     text-align: left;
 }
 
-.unique-table th {
-    background-color: #f4f4f4;
-    color: black;
-    font-weight: bold;
-}
-
-.unique-table tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
 .unique-table tr:hover {
     background-color: #f1f1f1;
 }
+
 
 .unique-buttons-container {
     display: flex;

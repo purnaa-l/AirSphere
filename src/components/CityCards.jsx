@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const cityData = [
   { name: "Mysuru", description: "Known for its rich heritage and the majestic Mysore Palace." },
   { name: "Bengaluru", description: "The Silicon Valley of India, bustling with tech innovation." },
-  { name: "Udupi", description: "Famous for its temples and delicious South Indian cuisine." },
+  // { name: "Udupi", description: "Famous for its temples and delicious South Indian cuisine." },
   { name: "Mangalore", description: "A coastal city with pristine beaches and cultural landmarks." },
   { name: "Madikeri", description: "Nestled in the hills of Coorg, known for its coffee plantations." },
   { name: "Chennai", description: "A cultural hub with historic temples and beautiful beaches." },

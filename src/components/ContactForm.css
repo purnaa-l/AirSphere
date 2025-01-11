@@ -2,7 +2,7 @@
 
 /* Main Wrapper */
 .unique-contact-form-wrapper {
-  /* background: linear-gradient(135deg, #182848, #000); */
+  background: linear-gradient(135deg, #182848, #000);
   position: relative;
   padding: 100px;
   color: black;
@@ -17,7 +17,7 @@
   background: url('images/clouds.png') repeat-x; 
 
   box-sizing: border-box;
-  background: rgba(0, 0, 0, 0.6); /* Optional: Add a semi-transparent background */
+  background: rgba(0, 0, 0, 0.6); 
   border-radius: 10px;
 }
 
@@ -111,3 +111,5 @@ textarea.unique-input-field {
 .unique-submit-btn:hover {
   background-color: #ffcc00;
 }
+
+
