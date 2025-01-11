@@ -104,9 +104,9 @@ function Navbar({ theme, toggleTheme }) {
               <li className="nav-item">
                 <Link to="/fetch-aqi" className="nav-link" style={{ color: '#fff' }}>Fetch AQI</Link>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <Link to="/predict-aqi" className="nav-link" style={{ color: '#fff' }}>Predict AQI</Link>
-              </li>
+              </li> */}
               <li className="nav-item">
                 <Link to="/view-past-aqis" className="nav-link" style={{ color: '#fff' }}>View Past AQIs</Link>
               </li>
