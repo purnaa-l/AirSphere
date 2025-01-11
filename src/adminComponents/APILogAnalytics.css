@@ -1,0 +1,89 @@
+/* APILogAnalytics.css */
+.analytics-container {
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+  }
+  
+  .chart {
+    margin-top: 20px;
+  }
+  
+  .chart h3 {
+    margin-bottom: 10px;
+  }
+  
+  /* APILogs.css */
+  .apilog-container {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .apilog-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .apilog-table th,
+  .apilog-table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+  }
+  
+  .download-btn-wrapper {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .download-btn {
+    padding: 10px 20px;
+    background-color: #42A5F5;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .download-btn:hover {
+    background-color: #2196F3;
+  }
+
+  .analytics-container {
+    padding: 20px;
+  }
+  .analytics-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .charts-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+  }
+  
+  .chart {
+    flex: 1 1 30%;
+    margin: 10px;
+    min-width: 300px; /* Ensure charts do not become too small */
+    max-width: 400px;
+  }
+  
+  .chart {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 10px;
+  }
+  
+  .chart canvas {
+    width: 100% !important;
+    height: auto !important;
+  }
+  
+  

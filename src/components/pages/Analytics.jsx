@@ -1,6 +1,5 @@
-
-import { useEffect, useState, useRef } from "react";
-import { useParams } from "react-router-dom"; // Use useParams to get the city from the URL
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { Line, Bar, Pie } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -14,9 +13,10 @@ import {
   Legend,
   ArcElement,
 } from "chart.js";
+import { AreaChart, Area, CartesianGrid, XAxis, YAxis, Tooltip as RechartsTooltip } from "recharts"; // Import recharts components
 import './Analytics.css'
 
-// Register necessary Chart.js components including ArcElement for Pie Chart
+// Register necessary Chart.js components
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -33,15 +33,8 @@ const Analytics = () => {
   const { city } = useParams(); // Get the city from the URL
   const [data, setData] = useState([]);
   
-  // Create references for each chart
-  const lineChartRef = useRef();
-  const barChartRef = useRef();
-  const pieChartRef = useRef();
-  const barChart2Ref = useRef();
-  const lineChart2Ref = useRef();
-
+  // Fetch data using useEffect
   useEffect(() => {
-    // Fetch the data for the city
     const fetchAnalyticsData = async () => {
       try {
         const response = await fetch(`http://localhost:8080/api/historical-data/city?city=${city}`);
@@ -64,7 +57,6 @@ const Analytics = () => {
     );
   }
 
-  // Define AQI categories
   const getAQICategory = (aqi) => {
     if (aqi <= 50) return 'Good';
     if (aqi <= 100) return 'Satisfactory';
@@ -73,7 +65,6 @@ const Analytics = () => {
     return 'Very Poor';
   };
 
-  // Count the days in each AQI category
   const categoryCounts = {
     Good: 0,
     Satisfactory: 0,
@@ -107,7 +98,7 @@ const Analytics = () => {
   };
 
   const chartData = {
-    labels: data.map((record) => record.date), // Dates as labels
+    labels: data.map((record) => record.date),
     datasets: [
       {
         label: "AQI",
@@ -115,7 +106,7 @@ const Analytics = () => {
         backgroundColor: "rgba(75,192,192,0.2)",
         borderColor: "rgba(75,192,192,1)",
         borderWidth: 1,
-        fill: true,
+        fill: true, // This makes it an area chart in Chart.js
       },
       {
         label: "Nitrogen Dioxide (ppm)",
@@ -135,7 +126,7 @@ const Analytics = () => {
       },
       {
         label: "Ozone (ppm)",
-        data: data.map((record) => record.o3), // Ozone data
+        data: data.map((record) => record.o3),
         backgroundColor: "rgba(255,159,64,0.2)",
         borderColor: "rgba(255,159,64,1)",
         borderWidth: 1,
@@ -143,7 +134,7 @@ const Analytics = () => {
       },
       {
         label: "Sulfur Dioxide (ppm)",
-        data: data.map((record) => record.so2), // SO2 data
+        data: data.map((record) => record.so2),
         backgroundColor: "rgba(255,205,86,0.2)",
         borderColor: "rgba(255,205,86,1)",
         borderWidth: 1,
@@ -165,7 +156,11 @@ const Analytics = () => {
     },
   };
 
-
+  // Format data for recharts AreaChart
+  const areaChartData = data.map((record) => ({
+    date: record.date,
+    aqi: record.aqi,
+  }));
 
   return (
     <div>
@@ -173,23 +168,35 @@ const Analytics = () => {
       <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}>
         <div style={{ width: '48%', height: '400px', margin: '10px' }}>
           <h4>AQI Line Chart</h4>
-          <Line ref={lineChartRef} data={chartData} options={options} />
+          <Line data={chartData} options={options} />
         </div>
         <div style={{ width: '48%', height: '400px', margin: '10px' }}>
           <h4>AQI Bar Chart</h4>
-          <Bar ref={barChartRef} data={chartData} options={options} />
+          <Bar data={chartData} options={options} />
         </div>
         <div style={{ width: '48%', height: '400px', margin: '10px' }}>
           <h4>AQI Verdict Pie Chart</h4>
-          <Pie ref={pieChartRef} data={pieChartData} options={options} />
+          <Pie data={pieChartData} options={options} />
         </div>
-        {/* <div style={{ width: '48%', height: '400px', margin: '10px' }}>
-          <h4>Additional AQI Bar Chart</h4>
-          <Bar ref={barChart2Ref} data={chartData} options={options} />
-        </div> */}
         <div style={{ width: '48%', height: '400px', margin: '10px', textAlign: 'center' }}>
-          <h4>Additional AQI Line Chart</h4>
-          <Line ref={lineChart2Ref} data={chartData} options={options} />
+          <h4>AQI Area Chart</h4>
+          <AreaChart
+            width={600}
+            height={300}
+            data={areaChartData}
+            margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis />
+            <YAxis />
+            <RechartsTooltip />
+            <Area
+              type="monotone"
+              dataKey="aqi"
+              stroke="#8884d8"
+              fill="#8884d8"
+            />
+          </AreaChart>
         </div>
       </div>
     </div>

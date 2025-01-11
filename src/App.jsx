@@ -21,6 +21,7 @@ import Analytics from './components/pages/Analytics';
 import Dashboard from './adminComponents/Dashboard';
 import ResolveQueries from './adminComponents/ResolveQueries';
 import UploadHistoricalData from './adminComponents/UploadHistoricalData';
+import APILogs from './adminComponents/APILogs';
 const App = () => {
   const [loading, setLoading] = useState(true);
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
@@ -64,6 +65,7 @@ const App = () => {
         <Route path="/admin/dashboard" element={<Dashboard />} />
         <Route path='/resolve-queries' element={<ResolveQueries />} />
         <Route path='/upload-historical-data' element={<UploadHistoricalData />} />
+        <Route path='/apilogs' element={<APILogs />} />
       </Routes>
     </BrowserRouter>
     

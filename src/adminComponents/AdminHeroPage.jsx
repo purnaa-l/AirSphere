@@ -45,6 +45,7 @@ function AdminHeroPage() {
            <Link to="/view-engagement" className="cta-button">View User Engagement</Link>
            <Link to="/admin/dashboard" className="cta-button">View AQI Data</Link>
            <Link to="/resolve-queries" className="cta-button">Resolve Queries</Link>
+           <Link to="/api-logs" className="cta-button">View API Logs</Link>
       </div>
     </div>
   );

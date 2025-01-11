@@ -1,0 +1,70 @@
+/* APILogs.css */
+
+.apilog-container {
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+  }
+  
+  .apilog-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .apilog-title {
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .apilog-content {
+    margin-top: 20px;
+    padding: 10px;
+  }
+  
+  .apilog-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+  }
+  
+  .apilog-table th,
+  .apilog-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .apilog-table th {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .apilog-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .download-btn-wrapper {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .download-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .download-btn:hover {
+    background-color: #45a049;
+  }
+  
+  .toast-container {
+    font-size: 14px;
+  }
+  
