@@ -1,11 +1,17 @@
 # AirSphere
 
-AirSphere is an advanced air quality monitoring application that displays real-time AQI (Air Quality Index) data, provides historical records, and predicts future air quality trends using Machine Learning. It helps users stay informed about air pollution levels and make data-driven decisions to protect their health.
+AirSphere is a comprehensive web application designed to provide real-time and historical Air Quality Index (AQI) data. It leverages cutting-edge technology to ensure users can access crucial environmental information with ease, making it an indispensable tool for anyone concerned about air quality.
 
+## Key Features
 
-# Features
-Real-time AQI Display: View live air quality data based on your location or a specified area.
-Historical Data: Access historical AQI records to analyze trends over time.
-Predictive Analytics: ML-powered predictions for future air quality trends, helping you plan ahead.
-Interactive Charts & Graphs: Visually explore AQI data over different time periods with easy-to-read graphs.
-Multiple City Support: Monitor air quality across multiple cities or regions. 
+- **Real-Time AQI Data**: Fetches and displays current air quality levels from reliable APIs, allowing users to stay updated on the latest environmental conditions.
+- **Historical Data Analysis**: Offers detailed AQI trends over various time frames, enabling users to track and analyze long-term air quality patterns.
+- **Interactive Chatbot**: A virtual assistant that answers AQI-related queries and navigates users through the platform, enhancing user interaction.
+- **Admin Dashboard**: Provides administrators with tools to manage city data, upload historical AQI metrics, and view user engagement analytics for better decision-making.
+- **User Engagement Metrics**: Tracks new user sign-ups, active sessions, and retention rates in real-time, providing insights into user behavior.
+- **Responsive Design**: Ensures a seamless experience across devices, with fast and mobile-friendly interfaces powered by React and Spring Boot.
+
+## Tech Stack
+-  React.js, Springboot, PostgreSQL, along with Spring Data JPA and Spring Security.
+
+  Refer to the backend code here: https://github.com/purnaa-l/AirSphereBackend
